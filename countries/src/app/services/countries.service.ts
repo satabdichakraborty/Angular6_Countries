@@ -11,7 +11,7 @@ export class CountriesService {
   constructor(private _http:Http) { }
 
   public getCountries():any{
-    this._http.get("https://restcountries.eu/rest/v2/all").pipe(map(response=>{
+    return this._http.get("https://restcountries.eu/rest/v2/all").pipe(map(response=>{
       return response.json();
     }, error =>{
       this.handleError(error);
